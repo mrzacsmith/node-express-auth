@@ -16,6 +16,9 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+// require passport auth ~ make sure above all routes
+require('./auth/auth')
+
 // routes
 app.use('/', mainRoutes)
 app.use('/', pwdRoutes)
